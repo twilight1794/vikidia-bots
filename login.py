@@ -5,11 +5,15 @@
 import requests
 
 headers = {
-    'User-Agent': 'AuroraBot/1.0 python-requests/2.21.0', # Puedes dejar este useragent, o cambiarlo a tu gusto
+    'User-Agent': 'AuroraBot/1.0 python-requests/2.21.0',
 }
 
 def login(urlapi):
     s = requests.Session()
+    n = open('user','r')
+    nn = n.read()[:-1]
+    p = open('password','r')
+    pp = p.read()[:-1]
     p0 = {
         'action':"query",
         'meta':"tokens",
@@ -21,8 +25,8 @@ def login(urlapi):
     LOGIN_TOKEN = d['query']['tokens']['logintoken']
     p1 = {
         'action':"login",
-        'lgname':"USUARIOBOT",
-        'lgpassword':"CONTRASENABOT",
+        'lgname':nn,
+        'lgpassword':pp,
         'lgtoken': LOGIN_TOKEN,
         'format':"json"
     }

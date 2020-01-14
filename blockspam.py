@@ -25,7 +25,7 @@ for i in listAF['query']['abuselog']:
         "action": "block",
         "user": i['user'],
         "expiry": "infinite",
-        "reason": "Aurora: cuenta spam",
+        "reason": "Cuenta spam (detectado automáticamente)",
         "nocreate": "true",
         "autoblock": "true",
         "token": CSRF_TOKEN,
